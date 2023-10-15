@@ -1,0 +1,61 @@
+---
+title: "Get Discord"
+api: "GET https://api.rectify.international/v1/user/getdiscord/ROBLOXID"
+description: "This endpoint gets the discord information on a user from their roblox id."
+---
+
+### Body
+
+There is no body of this request, to give information it is as a parameter.
+
+### Response
+
+<ResponseField name="Status" type="number">
+  Indicates whether the call was successful. 200 if successful, no response if not.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+
+Data object containing the user's information.
+
+<Expandable title="Response Info">
+
+<ResponseField name="version" type="string">
+  This is the version the API is running on, usually would be PROD(version as an integer).
+</ResponseField>
+
+<ResponseField name="success" type="boolean">
+  This responds whether the request was successful or not. If the user has been verified before and is able to have their info displayed, it is a boolean value.
+</ResponseField>
+
+<ResponseField name="discordid" type="integer">
+  This is the integer of the user's discord id. Example: 123456789
+</ResponseField>
+
+</Expandable>
+
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://api.rectify.international/v1/user/getdiscord/ROBLOXID' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "success": 200,
+  "data": {
+    "version": "PROD1,
+    "success": true,
+    "discordid": 987654321
+  }
+}
+```
+
+</ResponseExample>
