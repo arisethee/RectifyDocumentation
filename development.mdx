@@ -1,0 +1,78 @@
+---
+title: 'Development'
+description: 'Learn how Rectify works by testing it out'
+---
+
+<Info>
+  **Prerequisite** You should have installed Node.js (version 18.10.0 or
+  higher) or have Python 3.9.0 or higher installed.
+  Create a directory first and then continue with the following steps.
+</Info>
+
+Step 1. Install the requests package (if on python):
+<CodeGroup>
+
+```bash pip
+python -m pip install requests
+```
+
+</CodeGroup>
+
+Step 2. In the same directory in which you installed the requests module make the following file (or execute the following command if using curl):
+
+<CodeGroup>
+```bash js
+fetch('https://api.rectify.international/v1/user/getdiscord/ROBLOXID')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+```
+
+```bash python
+import requests
+
+response = requests.get('https://api.rectify.international/v1/user/getdiscord/ROBLOXID')
+
+if response.status_code == 200:
+    data = response.json()
+    print(data)
+else:
+    print(f'Request failed with status code {response.status_code}')
+```
+
+```bash curl
+curl --location --request GET 'https://api.rectify.international/v1/user/getdiscord/ROBLOXID' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+```
+</CodeGroup>
+
+
+# Response Example
+
+<ResponseField name="Status" type="number">
+  Indicates whether the call was successful. 200 if successful, no response if not.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+
+Data object containing the user's information.
+
+<Expandable title="Response Info">
+
+<ResponseField name="version" type="string">
+  This is the version the API is running on, usually would be PROD(version as an integer).
+</ResponseField>
+
+<ResponseField name="success" type="boolean">
+  This responds whether the request was successful or not. If the user has been verified before and is able to have their info displayed, it is a boolean value.
+</ResponseField>
+
+<ResponseField name="discordid" type="integer">
+  This is the integer of the user's discord id. Example: 123456789
+</ResponseField>
+
+</Expandable>
+
+</ResponseField>
+
+On behalf of the Rectify team we thank you for choosing us as your verification choice :)
