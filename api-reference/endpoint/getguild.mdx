@@ -1,13 +1,13 @@
 ---
-title: "Get Roblox"
-api: "GET https://api.rectify.international/v1/user/getroblox/{id}"
-description: "This endpoint gets the roblox information on a user from their discord id."
+title: "Get Guild"
+api: "GET https://api.rectify.international/v1/getguild/1"
+description: "This endpoint gets the discord guild information from the Roblox Group."
 authMethod: "none"
 ---
 
 ### Body
 
-There is no body of this request, to give information it is as a parameter.
+This request does not use a body, it uses params in the url, replace 1 group id.
 
 ### Response
 
@@ -29,8 +29,8 @@ Data object containing the user's information.
   This responds whether the request was successful or not. If the user has been verified before and is able to have their info displayed, it is a boolean value.
 </ResponseField>
 
-<ResponseField name="discordid" type="integer">
-  This is the integer of the user's roblox id. Example: 16
+<ResponseField name="guildid" type="integer">
+  This is the integer of the discord guild's id. Example: 123456789
 </ResponseField>
 
 </Expandable>
@@ -40,7 +40,7 @@ Data object containing the user's information.
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://api.rectify.international/v1/user/getroblox/DISCORDID' \
+curl --location --request GET 'https://api.rectify.international/v1/getguild/1' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 ```
 
@@ -54,7 +54,7 @@ curl --location --request GET 'https://api.rectify.international/v1/user/getrobl
   "data": {
     "version": "PROD1,
     "success": true,
-    "robloxid": 16
+    "guildid": 987654321
   }
 }
 ```

@@ -1,0 +1,105 @@
+---
+title: "Get User Permissions"
+api: "GET https://api.rectify.international/v1/public_admin/userpermissions"
+description: "This endpoint gets the user's permissions from the database."
+authMethod: "none"
+---
+
+### Body
+
+There is infact a body of this request.
+
+<ParamField body="apiKey" type="string" default="123abc" required>
+  The apiKey of the desired request, you must fetch an apiKey in the discord before you can do any requests in this endpoint.
+</ParamField>
+
+<ParamField body="userid" type="integer" default="123456789" required>
+    The user's discord id, this is used to get the user's permissions.
+</ParamField>
+
+### Response
+
+<ResponseField name="Status" type="number">
+  Indicates whether the call was successful. 200 if successful, no response if not.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+
+Data object containing the user's information.
+</ResponseField>
+
+<Expandable title="Response Info">
+
+<ResponseField name="version" type="string">
+  This is the version the API is running on, usually would be PROD(version as an integer).
+</ResponseField>
+
+<ResponseField name="success" type="boolean">
+  This responds whether the request was successful or not. If the user has been verified before and is able to have their info displayed, it is a boolean value.
+</ResponseField>
+
+<ResponseField name="discordid" type="integer">
+  This is the integer of the user's roblox id. Example: 16
+</ResponseField>
+
+<Expandable title="permissions">
+  <ResponseField name="ADMINISTRATOR" type="boolean">
+    This is the boolean value of whether the user has the administrator permission.
+  </ResponseField>
+  <ResponseField name="MODERATE_MEMBERS" type="boolean">
+    This is the boolean value of whether the user has the moderate members permission.
+  </ResponseField>
+  <ResponseField name="MENTION_EVERYONE" type="boolean">
+    This is the boolean value of whether the user has the mention everyone permission.
+  </ResponseField>
+  <ResponseField name="MANAGE_GUILD" type="boolean">
+    This is the boolean value of whether the user has the manage guild permission.
+  </ResponseField>
+  <ResponseField name="KICK_MEMBERS" type="boolean">
+    This is the boolean value of whether the user has the kick members permission.
+  </ResponseField>
+  <ResponseField name="BAN_MEMBERS" type="boolean">
+    This is the boolean value of whether the user has the ban members permission.
+  </ResponseField>
+  <ResponseField name="VIEW_AUDIT_LOG" type="boolean">
+    This is the boolean value of whether the user has the view audit log permission.
+  </ResponseField>
+</Expandable>
+</Expandable>
+<RequestExample>
+
+```bash Example Request
+curl --location --request GET 'https://api.rectify.international/v1/public_admin/userpermissions' \
+--header 'Content-Type: application/x-www-form-urlencoded' \
+--data '{
+  "apiKey": "123abc",
+  "userid": "123456789" 
+}'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+{
+    "status": 200,
+    "data": {
+        "version": "PROD1",
+        "success": true,
+        "discordid": "740533194381590568",
+        "permissions": {
+            "ADMINISTRATOR": true,
+            "MODERATE_MEMBERS": true,
+            "MENTION_EVERYONE": true,
+            "MANAGE_GUILD": true,
+            "KICK_MEMBERS": true,
+            "BAN_MEMBERS": true,
+            "VIEW_AUDIT_LOG": true
+        }
+    }
+}
+}
+```
+</ResponseExample>

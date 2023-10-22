@@ -63,7 +63,11 @@
       "group": "Endpoint Examples",
       "pages": [
         "api-reference/endpoint/getdiscord",
-        "api-reference/endpoint/getroblox"
+        "api-reference/endpoint/getroblox",
+        "api-reference/endpoint/userperms",
+        "api-reference/endpoint/getguild",
+        "api-reference/endpoint/getgroup",
+        "api-reference/endpoint/checkapikey"
       ]
     }
   ],
@@ -71,5 +75,8 @@
     "twitter": "https://twitter.com/LearnToLua",
     "discord": "https://discord.gg/FE4U4ScrKe",
     "website": "https://rectify.international"
+  },
+  "api": {
+    "baseUrl": "https://api.rectify.international"
   }
 }

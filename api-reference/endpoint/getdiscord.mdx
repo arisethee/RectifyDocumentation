@@ -1,12 +1,13 @@
 ---
 title: "Get Discord"
-api: "GET https://api.rectify.international/v1/user/getdiscord/ROBLOXID"
+api: "GET https://api.rectify.international/v1/user/getdiscord/1"
 description: "This endpoint gets the discord information on a user from their roblox id."
+authMethod: "none"
 ---
 
 ### Body
 
-There is no body of this request, to give information it is as a parameter.
+This request does not use a body, it uses params in the url, replace 1  with the user's roblox id.
 
 ### Response
 
@@ -39,7 +40,7 @@ Data object containing the user's information.
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://api.rectify.international/v1/user/getdiscord/ROBLOXID' \
+curl --location --request GET 'https://api.rectify.international/v1/user/getdiscord/1' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 ```
 
