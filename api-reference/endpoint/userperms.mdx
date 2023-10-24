@@ -1,6 +1,6 @@
 ---
 title: "Get User Permissions"
-api: "GET https://api.rectify.international/v1/public_admin/userpermissions"
+api: "POST https://api.rectify.international/v1/public_admin/userpermissions"
 description: "This endpoint gets the user's permissions from the database."
 authMethod: "none"
 ---
@@ -69,7 +69,7 @@ Data object containing the user's information.
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://api.rectify.international/v1/public_admin/userpermissions' \
+curl --location --request POST 'https://api.rectify.international/v1/public_admin/userpermissions' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
 --data '{
   "apiKey": "123abc",
