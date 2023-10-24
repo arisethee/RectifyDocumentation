@@ -2,10 +2,10 @@
   "$schema": "https://mintlify.com/schema.json",
   "name": "Rectify API",
   "logo": {
-    "dark": "./favicon.png",
-    "light": "./favicon.png"
+    "dark": "/favicon.png",
+    "light": "/favicon.png"
   },
-  "favicon": "./favicon.png",
+  "favicon": "/logo.png",
   "colors": {
     "primary": "#B7D2C6",
     "light": "#E0EBE6",
