@@ -33,6 +33,18 @@ Data object containing the user's information.
   This is the integer of the user's discord id. Example: 123456789
 </ResponseField>
 
+<ResponseField name="discorduser" type="string">
+  This is the user's discord username. Example: generaljonax
+</ResponseField>
+
+<ResponseField name="premium" type="boolean">
+  This is whether the user is premium or not. Example: true
+</ResponseField>
+
+<ResponseField name="staff" type="boolean">
+  This is whether the user is staff or not. Example: true
+</ResponseField>
+
 </Expandable>
 
 </ResponseField>
@@ -50,12 +62,15 @@ curl --location --request GET 'https://api.rectify.international/v1/user/getdisc
 
 ```json Response
 {
-  "success": 200,
-  "data": {
-    "version": "PROD1,
-    "success": true,
-    "discordid": 987654321
-  }
+    "status": 200,
+    "data": {
+        "version": "PROD1",
+        "success": true,
+        "discordid": "740533194381590568",
+        "discorduser": "generaljonax",
+        "premium": true,
+        "staff": true
+    }
 }
 ```
 
